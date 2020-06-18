@@ -1,28 +1,20 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = {
-    value: this.props.value,
-  };
-
-  //   constructor() {
-  //     super();
-  //     this.handleIncrement = this.handleIncrement.bind(this);
-  //   }
-
-  handleIncrement = () => {
-    this.setState({ value: this.state.count + 1 });
-  };
-
   render() {
     return (
       <div>
-        <span className={this.getCountColour()}>{this.state.value}</span>
-        <button onClick={this.handleIncrement} className="btn btn-info btn-sm">
+        <span className={this.getCountColour()}>
+          {this.props.counter.value}
+        </span>
+        <button
+          onClick={() => this.props.onIncrement(this.props.counter)}
+          className="btn btn-info btn-sm"
+        >
           Increment
         </button>
         <button
-          onClick={this.handleDelete}
+          onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
@@ -33,7 +25,7 @@ class Counter extends Component {
 
   getCountColour() {
     let classes = "badge m-2 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.counter.value === 0 ? "warning" : "primary";
     return classes;
   }
 
