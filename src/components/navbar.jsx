@@ -5,7 +5,7 @@ class NavBar extends Component {
     return (
       <nav className="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-          Navbar
+          Focus
         </a>
       </nav>
     );
