@@ -33,33 +33,43 @@ class TimerDisplay extends Component {
     let hours = ("0" + Math.floor(currentTime / 3600000)).slice(-2);
 
     return (
-      <div className="Stopwatch jumbotron m-5 text-center">
-        <div className="Stopwatch-header">Stopwatch</div>
-        <div className="Stopwatch-display">
-          <h1 style={{ fontSize: 100 }}>
-            {hours}:{minutes}:{seconds}
-          </h1>
+      <div className="Stopwatch m-5 text-center">
+        <div className="card shadow-sm bg-light mb-3">
+          <div className="card-header">Timer</div>
+          <div className="card-body">
+            <h5 className="card-title">
+              <div className="Stopwatch-display">
+                <h1 style={{ fontSize: 100 }}>
+                  {hours}:{minutes}:{seconds}
+                </h1>
+              </div>
+              {this.state.isTiming === false && this.state.currentTime === 0 && (
+                <button
+                  className="btn btn-success m-2"
+                  onClick={this.startTimer}
+                >
+                  Start
+                </button>
+              )}
+              {this.state.isTiming === true && (
+                <button className="btn btn-info m-2" onClick={this.stopTimer}>
+                  Stop
+                </button>
+              )}
+              {this.state.isTiming === false && this.state.currentTime > 0 && (
+                <button className="btn btn-info m-2" onClick={this.startTimer}>
+                  Resume
+                </button>
+              )}
+              {this.state.isTiming === false && this.state.currentTime > 0 && (
+                <button className="btn btn-info" onClick={this.resetTimer}>
+                  Reset
+                </button>
+              )}
+            </h5>
+            <p className="card-text">Currently working on:</p>
+          </div>
         </div>
-        {this.state.isTiming === false && this.state.currentTime === 0 && (
-          <button className="btn btn-info m-2" onClick={this.startTimer}>
-            Start
-          </button>
-        )}
-        {this.state.isTiming === true && (
-          <button className="btn btn-info m-2" onClick={this.stopTimer}>
-            Stop
-          </button>
-        )}
-        {this.state.isTiming === false && this.state.currentTime > 0 && (
-          <button className="btn btn-info m-2" onClick={this.startTimer}>
-            Resume
-          </button>
-        )}
-        {this.state.isTiming === false && this.state.currentTime > 0 && (
-          <button className="btn btn-info" onClick={this.resetTimer}>
-            Reset
-          </button>
-        )}
       </div>
     );
   }

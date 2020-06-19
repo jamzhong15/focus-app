@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./components/navbar";
+import SideBar from "./components/sidebar";
 import Counters from "./components/counters";
 import "./App.css";
 import TimerDisplay from "./components/timerDisplay";
@@ -8,9 +9,16 @@ function App() {
   return (
     <React.Fragment>
       <NavBar />
-      <main className="container">
-        <TimerDisplay />
-      </main>
+      <div class="row container-fluid">
+        <div class="col-3">
+          <SideBar />
+        </div>
+        <div class="col-9">
+          <main className="container">
+            <TimerDisplay />
+          </main>
+        </div>
+      </div>
     </React.Fragment>
   );
 }
