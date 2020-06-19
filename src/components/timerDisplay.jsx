@@ -26,21 +26,6 @@ class TimerDisplay extends Component {
     this.setState({ currentTime: 0, timeElapsed: 0 });
   };
 
-  // convertSeconds(secs) {
-  //     const hours = Math.floor(secs/ 60*60);
-  //     let excludeHours = secs % (60*60);
-  //     const minutes = Math.floor(excludeHours / 60);
-  //     let excludeMinutes = secs % (excludeHours % 60);
-  //     const seconds = Math.ceil(excludeMinutes);
-
-  //     let time = {
-  //         h: hours,
-  //         m: minutes,
-  //         s: seconds
-  //     };
-  //     return time;
-  // }
-
   render() {
     const { currentTime } = this.state;
     let seconds = ("0" + (Math.floor(currentTime / 1000) % 60)).slice(-2);
@@ -48,22 +33,32 @@ class TimerDisplay extends Component {
     let hours = ("0" + Math.floor(currentTime / 3600000)).slice(-2);
 
     return (
-      <div className="Stopwatch">
+      <div className="Stopwatch jumbotron m-5 text-center">
         <div className="Stopwatch-header">Stopwatch</div>
         <div className="Stopwatch-display">
-          {hours} : {minutes} : {seconds}
+          <h1 style={{ fontSize: 100 }}>
+            {hours}:{minutes}:{seconds}
+          </h1>
         </div>
         {this.state.isTiming === false && this.state.currentTime === 0 && (
-          <button onClick={this.startTimer}>Start</button>
+          <button className="btn btn-info m-2" onClick={this.startTimer}>
+            Start
+          </button>
         )}
         {this.state.isTiming === true && (
-          <button onClick={this.stopTimer}>Stop</button>
+          <button className="btn btn-info m-2" onClick={this.stopTimer}>
+            Stop
+          </button>
         )}
         {this.state.isTiming === false && this.state.currentTime > 0 && (
-          <button onClick={this.startTimer}>Resume</button>
+          <button className="btn btn-info m-2" onClick={this.startTimer}>
+            Resume
+          </button>
         )}
         {this.state.isTiming === false && this.state.currentTime > 0 && (
-          <button onClick={this.resetTimer}>Reset</button>
+          <button className="btn btn-info" onClick={this.resetTimer}>
+            Reset
+          </button>
         )}
       </div>
     );
