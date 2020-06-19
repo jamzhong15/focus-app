@@ -34,8 +34,8 @@ class TimerDisplay extends Component {
 
     return (
       <div className="Stopwatch m-5 text-center">
-        <div className="card shadow-sm bg-light mb-3">
-          <div className="card-header">Timer</div>
+        <div className="card shadow bg-light mb-3">
+          <div className="card-header">TIMER</div>
           <div className="card-body">
             <h5 className="card-title">
               <div className="Stopwatch-display">
@@ -67,7 +67,7 @@ class TimerDisplay extends Component {
                 </button>
               )}
             </h5>
-            <p className="card-text">Currently working on:</p>
+            <p className="card-text">Working on: </p>
           </div>
         </div>
       </div>
