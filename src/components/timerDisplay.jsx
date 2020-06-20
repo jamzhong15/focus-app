@@ -39,10 +39,15 @@ class TimerDisplay extends Component {
           <div className="card-body">
             <h5 className="card-title">
               <div className="Stopwatch-display">
-                <h1 style={{ fontSize: 100 }}>
+                <h1 style={{ fontSize: 90 }}>
                   {hours}:{minutes}:{seconds}
                 </h1>
               </div>
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="What are you working on?"
+              ></input>
               {this.state.isTiming === false && this.state.currentTime === 0 && (
                 <button
                   className="btn btn-success m-2"

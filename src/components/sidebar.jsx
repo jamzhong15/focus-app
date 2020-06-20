@@ -9,13 +9,14 @@ class SideBar extends Component {
             <li class="nav-item">
               <a class="nav-link active" href="#">
                 <span data-feather="home"></span>
-                Timer <span class="sr-only">(current)</span>
+                <i className="fa fa-clock-o"></i> Timer{" "}
+                <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="file"></span>
-                Dashboard
+                <i className="fa fa-bar-chart"></i> Dashboard
               </a>
             </li>
           </ul>
