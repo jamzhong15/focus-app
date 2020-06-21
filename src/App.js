@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./components/navbar";
 import SideBar from "./components/sidebar";
 import Counters from "./components/counters";
-import Task from "./components/task";
+import Tasks from "./components/tasks";
 import "./App.css";
 import TimerDisplay from "./components/timerDisplay";
 
@@ -17,7 +17,7 @@ function App() {
         <div class="col-9">
           <main className="container">
             <TimerDisplay />
-            <Task />
+            <Tasks />
           </main>
         </div>
       </div>

@@ -37,14 +37,14 @@ class TimerDisplay extends Component {
         <div className="card shadow bg-light mb-3">
           <div className="card-header">TIMER</div>
           <div className="card-body">
-            <h5 className="card-title">
-              <div className="Stopwatch-display">
-                <h1 style={{ fontSize: 90 }}>
-                  {hours}:{minutes}:{seconds}
-                </h1>
-              </div>
+            <div className="Stopwatch-display">
+              <h1 style={{ fontSize: 90 }}>
+                {hours}:{minutes}:{seconds}
+              </h1>
+            </div>
+            <div class="form-group">
               <input
-                class="form-control form-control-lg"
+                className="form-control"
                 type="text"
                 placeholder="What are you working on?"
               ></input>
@@ -67,12 +67,11 @@ class TimerDisplay extends Component {
                 </button>
               )}
               {this.state.isTiming === false && this.state.currentTime > 0 && (
-                <button className="btn btn-info" onClick={this.resetTimer}>
-                  Reset
+                <button className="btn btn-danger" onClick={this.resetTimer}>
+                  Finish
                 </button>
               )}
-            </h5>
-            <p className="card-text">Working on: </p>
+            </div>
           </div>
         </div>
       </div>

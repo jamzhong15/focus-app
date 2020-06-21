@@ -15,8 +15,14 @@ class SideBar extends Component {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file"></span>
+                <span data-feather="file1"></span>
                 <i className="fa fa-bar-chart"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file2"></span>
+                <i className="fa fa-info-circle"></i> About
               </a>
             </li>
           </ul>
