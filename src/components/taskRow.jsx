@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class TaskRow extends Component {
   state = {};
   render() {
-    const task = this.props.task;
+    const task = this.props.row;
 
     return (
       <tr>

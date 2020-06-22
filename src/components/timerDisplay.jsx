@@ -42,11 +42,13 @@ class TimerDisplay extends Component {
                 {hours}:{minutes}:{seconds}
               </h1>
             </div>
-            <div class="form-group">
+            <form onSubmit={this.props.handleFormSubmit}>
               <input
                 className="form-control"
                 type="text"
                 placeholder="What are you working on?"
+                onChange={this.props.handleInputChange}
+                id="title"
               ></input>
               {this.state.isTiming === false && this.state.currentTime === 0 && (
                 <button
@@ -67,11 +69,11 @@ class TimerDisplay extends Component {
                 </button>
               )}
               {this.state.isTiming === false && this.state.currentTime > 0 && (
-                <button className="btn btn-danger" onClick={this.resetTimer}>
+                <button className="btn btn-danger" type="submit">
                   Finish
                 </button>
               )}
-            </div>
+            </form>
           </div>
         </div>
       </div>

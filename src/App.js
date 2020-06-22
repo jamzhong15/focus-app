@@ -1,10 +1,8 @@
 import React from "react";
 import NavBar from "./components/navbar";
 import SideBar from "./components/sidebar";
-import Counters from "./components/counters";
-import Tasks from "./components/tasks";
 import "./App.css";
-import TimerDisplay from "./components/timerDisplay";
+import Timer from "./components/timer";
 
 function App() {
   return (
@@ -15,10 +13,7 @@ function App() {
           <SideBar />
         </div>
         <div class="col-9">
-          <main className="container">
-            <TimerDisplay />
-            <Tasks />
-          </main>
+          <Timer />
         </div>
       </div>
     </React.Fragment>
