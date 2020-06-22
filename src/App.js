@@ -8,11 +8,11 @@ function App() {
   return (
     <React.Fragment>
       <NavBar />
-      <div class="row container-fluid">
-        <div class="col-3">
+      <div className="row container-fluid">
+        <div className="col-3">
           <SideBar />
         </div>
-        <div class="col-9">
+        <div className="col-9">
           <Timer />
         </div>
       </div>

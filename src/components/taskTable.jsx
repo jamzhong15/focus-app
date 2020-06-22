@@ -17,25 +17,24 @@ class TaskTable extends Component {
 
   render() {
     const tasks = this.props.tasks;
-    console.log(tasks);
 
     return (
       <div className="card shadow bg-light mb-3">
         <div className="card-header">Recents</div>
         <div className="card-body">
-          <p className="card-text">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">Task</th>
-                  <th scope="col">Duration</th>
-                </tr>
-              </thead>
-              {tasks.map((task) => {
-                return <TaskRow row={task} />;
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tasks.map((task, index) => {
+                return <TaskRow key={index} row={task} />;
               })}
-            </table>
-          </p>
+            </tbody>
+          </table>
         </div>
       </div>
     );

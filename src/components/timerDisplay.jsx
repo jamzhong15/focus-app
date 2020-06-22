@@ -24,6 +24,7 @@ class TimerDisplay extends Component {
 
   resetTimer = () => {
     this.setState({ currentTime: 0, timeElapsed: 0 });
+    this.props.handleFormSubmit(this.state.currentTime);
   };
 
   render() {
@@ -42,7 +43,7 @@ class TimerDisplay extends Component {
                 {hours}:{minutes}:{seconds}
               </h1>
             </div>
-            <form onSubmit={this.props.handleFormSubmit}>
+            <form>
               <input
                 className="form-control"
                 type="text"
@@ -69,7 +70,10 @@ class TimerDisplay extends Component {
                 </button>
               )}
               {this.state.isTiming === false && this.state.currentTime > 0 && (
-                <button className="btn btn-danger" type="submit">
+                <button
+                  className="btn btn-danger"
+                  onClick={() => this.resetTimer()}
+                >
                   Finish
                 </button>
               )}

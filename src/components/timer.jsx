@@ -9,12 +9,12 @@ class Timer extends Component {
     tasks: [],
   };
 
-  handleFormSubmit = (e) => {
-    e.preventDefault();
+  handleFormSubmit = (time) => {
+    console.log([time]);
     let tasks = [...this.state.tasks];
     tasks.push({
       title: this.state.title,
-      duration: this.state.duration,
+      duration: time,
     });
 
     this.setState({ title: "", duration: 0, tasks });
