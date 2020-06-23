@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+// Todo:
+// Convert time using a method
+// Display duration in a readable format
 class TimerDisplay extends Component {
   state = { isTiming: false, currentTime: 0, timeElapsed: 0 };
 
@@ -26,6 +28,8 @@ class TimerDisplay extends Component {
     this.setState({ currentTime: 0, timeElapsed: 0 });
     this.props.handleFormSubmit(this.state.currentTime);
   };
+
+  formatTime = () => {};
 
   render() {
     const { currentTime } = this.state;
