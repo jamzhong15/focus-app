@@ -2,21 +2,9 @@ import React, { Component } from "react";
 import TaskRow from "./taskRow";
 
 class TaskTable extends Component {
-  // state = {
-  //   tasks: [],
-  // };
-
-  // renderTasks = (task, index) => {
-  //   return (
-  //     <tr key={index}>
-  //       <td>{task.title}</td>
-  //       <td>{task.duration}</td>
-  //     </tr>
-  //   );
-  // };
-
   render() {
     const tasks = this.props.tasks;
+    console.log(tasks);
 
     return (
       <div className="card shadow bg-light mb-3">
@@ -26,6 +14,7 @@ class TaskTable extends Component {
             <thead>
               <tr>
                 <th scope="col">Task</th>
+                <th scope="col">Date</th>
                 <th scope="col">Duration</th>
               </tr>
             </thead>

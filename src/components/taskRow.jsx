@@ -8,6 +8,7 @@ class TaskRow extends Component {
     return (
       <tr>
         <td>{task.title}</td>
+        <td>{task.startDate}</td>
         <td>{task.duration}</td>
       </tr>
     );

@@ -6,6 +6,7 @@ class TimerDisplay extends Component {
   state = { isTiming: false, currentTime: 0, timeElapsed: 0 };
 
   startTimer = () => {
+    let startDate = new Date();
     this.setState({
       isTiming: true,
       currentTime: this.state.currentTime,
@@ -26,11 +27,13 @@ class TimerDisplay extends Component {
 
   resetTimer = () => {
     this.setState({ currentTime: 0, timeElapsed: 0 });
+    const date = new Date();
     const formatTime = this.formatTime.bind(this);
     const time = formatTime();
     const elapsed = time[2] + ":" + time[1] + ":" + time[0];
+    const startDate = date.toLocaleDateString();
 
-    this.props.handleFormSubmit(elapsed);
+    this.props.handleFormSubmit(elapsed, startDate);
   };
 
   formatTime() {
