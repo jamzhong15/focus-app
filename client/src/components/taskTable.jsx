@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import TaskRow from "./taskRow";
 
 class TaskTable extends Component {
+  async componentDidMount() {
+    const url = "http://localhost:5000/test";
+    const response = await fetch(url);
+    const data = await response.text();
+    console.log(data);
+  }
+
   render() {
     const tasks = this.props.tasks;
 

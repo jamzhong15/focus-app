@@ -69,6 +69,25 @@ class TimerDisplay extends Component {
                 onChange={this.props.handleInputChange}
                 id="title"
               ></input>
+              <button
+                className="btn btn-success m-2"
+                onClick={async () => {
+                  const response = await fetch(
+                    "http://localhost:5000/posttest",
+                    {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: "hello",
+                    }
+                  );
+
+                  if (response.ok) {
+                    console.log("response worked!");
+                  }
+                }}
+              >
+                POST
+              </button>
               {this.state.isTiming === false && this.state.currentTime === 0 && (
                 <button
                   className="btn btn-success m-2"
