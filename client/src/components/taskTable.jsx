@@ -4,7 +4,6 @@ import TaskRow from "./taskRow";
 class TaskTable extends Component {
   render() {
     const tasks = this.props.tasks;
-    console.log(tasks);
 
     return (
       <div className="card shadow bg-light mb-3">
