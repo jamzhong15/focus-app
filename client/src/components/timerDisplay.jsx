@@ -30,10 +30,24 @@ class TimerDisplay extends Component {
     const date = new Date();
     const formatTime = this.formatTime.bind(this);
     const time = formatTime();
-    const elapsed = time[2] + ":" + time[1] + ":" + time[0];
-    const startDate = date.toLocaleDateString();
+    const data = {
+      elapsed: time[2] + ":" + time[1] + ":" + time[0],
+      startDate: date.toLocaleDateString(),
+    };
+    this.props.handleFormSubmit(data);
+  };
 
-    this.props.handleFormSubmit(elapsed, startDate);
+  postSubmission = async () => {
+    const response = await fetch("http://localhost:5000/addTask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title: "hello" }),
+    });
+
+    if (response.ok) {
+      const data = await response.text();
+      console.log(data);
+    }
   };
 
   formatTime() {
@@ -63,17 +77,7 @@ class TimerDisplay extends Component {
             </div>
             <button
               className="btn btn-success m-2"
-              onClick={async () => {
-                const response = await fetch("/addTask", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: "hello",
-                });
-
-                if (response.ok) {
-                  console.log("response worked!");
-                }
-              }}
+              onClick={this.postSubmission}
             >
               POST
             </button>
