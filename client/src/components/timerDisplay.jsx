@@ -37,19 +37,6 @@ class TimerDisplay extends Component {
     this.props.handleFormSubmit(data);
   };
 
-  postSubmission = async () => {
-    const response = await fetch("http://localhost:5000/addTask", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title: "hello" }),
-    });
-
-    if (response.ok) {
-      const data = await response.text();
-      console.log(data);
-    }
-  };
-
   formatTime() {
     const { currentTime } = this.state;
     let seconds = ("0" + (Math.floor(currentTime / 1000) % 60)).slice(-2);
@@ -75,12 +62,6 @@ class TimerDisplay extends Component {
                 {hours}:{minutes}:{seconds}
               </h1>
             </div>
-            <button
-              className="btn btn-success m-2"
-              onClick={this.postSubmission}
-            >
-              POST
-            </button>
             <form>
               <input
                 className="form-control"
